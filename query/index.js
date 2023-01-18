@@ -9,7 +9,7 @@ app.use(cors());
 const posts = {}
 
 app.get('/posts', (req, res) => {
-
+  res.send(posts)
 });
 
 app.post('/events', (req, res) => {
@@ -29,8 +29,8 @@ app.post('/events', (req, res) => {
     post.comments.push({ id, content });
   }
 
+  console.log(posts);
   res.send({})
-
 });
 
 app.listen(4002, () => {
